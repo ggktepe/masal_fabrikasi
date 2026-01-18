@@ -1,0 +1,20 @@
+
+{
+  "short_name": "Masal Fabrikası",
+  "name": "Masal Fabrikası: Sihirli Çocuk Hikayeleri",
+  "icons": [
+    {
+      "src": "https://qwmvqpbnxqxaoskieyyw.supabase.co/storage/v1/object/public/images/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#d946ef",
+  "background_color": "#f0f9ff",
+  "description": "Yapay zeka destekli kişiselleştirilmiş çocuk masalları.",
+  "orientation": "portrait",
+  "lang": "tr"
+}

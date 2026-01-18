@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Masal Fabrikası</title>
+    
+    <!-- PWA & Native Meta Tags -->
+    <meta name="theme-color" content="#d946ef" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Masal Fabrikası" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="https://qwmvqpbnxqxaoskieyyw.supabase.co/storage/v1/object/public/images/icon.png" />
+
+    <!-- Google Fonts: Fredoka -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- Polyfill for Import Maps (Fixes Android issues) -->
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.10.1/dist/es-module-shims.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              magic: {
+                50: '#fdf4ff',
+                100: '#fae8ff',
+                200: '#f5d0fe',
+                300: '#f0abfc',
+                400: '#e879f9',
+                500: '#d946ef',
+                600: '#c026d3',
+                700: '#a21caf',
+                800: '#86198f',
+                900: '#701a75',
+                950: '#4a044e',
+              },
+              mint: {
+                50: '#f0fdf4',
+                100: '#dcfce7',
+                200: '#bbf7d0',
+                300: '#86efac',
+              },
+              sky: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                200: '#bae6fd',
+                300: '#7dd3fc',
+                900: '#0c4a6e',
+              },
+              gold: {
+                400: '#fbbf24',
+                500: '#f59e0b',
+              }
+            },
+            fontFamily: {
+              sans: ['Fredoka', 'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', 'sans-serif'],
+            },
+            borderRadius: {
+              'magic': '2.5rem',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      :root {
+        --safe-area-inset-top: env(safe-area-inset-top);
+        --safe-area-inset-bottom: env(safe-area-inset-bottom);
+      }
+      
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      
+      /* Global Mobile Reset */
+      * {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        user-select: none;
+      }
+      
+      input, textarea {
+        user-select: text;
+      }
+
+      /* Paper Texture Overlay */
+      .paper-texture {
+        background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+      }
+
+      /* Soft Watercolor Blobs */
+      .watercolor-blob {
+        filter: blur(40px);
+        opacity: 0.4;
+        z-index: -1;
+      }
+
+      body {
+        background-color: #f0f9ff;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      /* Animations */
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float {
+        animation: float 4s ease-in-out infinite;
+      }
+
+      @keyframes flag-wave {
+        0% { transform: perspective(400px) rotateY(0deg) skewY(0deg); }
+        25% { transform: perspective(400px) rotateY(10deg) skewY(2deg); }
+        50% { transform: perspective(400px) rotateY(0deg) skewY(0deg); }
+        75% { transform: perspective(400px) rotateY(-10deg) skewY(-2deg); }
+        100% { transform: perspective(400px) rotateY(0deg) skewY(0deg); }
+      }
+      .animate-flag-wave {
+        animation: flag-wave 3s ease-in-out infinite;
+        transform-origin: center left;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 0.5s ease-out forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2"
+  }
+}
+</script>
+</head>
+  <body class="bg-sky-50 text-magic-950 font-sans paper-texture">
+    <div id="root" class="h-full w-full flex flex-col overflow-hidden"></div>
+  </body>
+</html>

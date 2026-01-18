@@ -1,0 +1,7 @@
+{
+  "name": "Masal Fabrikası_1401",
+  "description": "Flutter optimized AI story generator for children.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
